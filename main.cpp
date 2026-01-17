@@ -1,22 +1,21 @@
 #include <iostream>
-#include <cmath>
-
+#include <vector>
 using namespace std;
+
 int main() {
     setlocale(LC_ALL, "uk_UA.utf8");
+    int n;
+    cout << "Скільки точок перевірити? ";
+    cin >> n;
 
-    double x, y;
-
-    cout << "--- Лабораторна робота №10. Варіант 25 ---" << endl;
-    cout << "Введіть координату X: ";
-    cin >> x;
-    cout << "Введіть координату Y: ";
-    cin >> y;
-    if (x >= 0 && y >= 0 && (x * x + y * y <= 1)) {
-        cout << "Результат: Точка потрапляє в заштриховану область." << endl;
-    } else {
-        cout << "Результат: Точка НЕ потрапляє в область." << endl;
+    for (int i = 0; i < n; i++) {
+        double x, y;
+        cout << "Точка " << i + 1 << " (x y): ";
+        cin >> x >> y;
+        if (x >= 0 && y >= 0 && (x * x + y * y <= 1)) 
+            cout << "-> В області" << endl;
+        else 
+            cout << "-> Поза областю" << endl;
     }
-
     return 0;
 }
